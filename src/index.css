@@ -1,3 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/wahednur/ws-cdn@master/css/old-eng-font-mt.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.header-desc {
+  color: #706f6f;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.header-date {
+  color: #706f6f;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+}
+.header-date span {
+  color: #403f3f;
+}
