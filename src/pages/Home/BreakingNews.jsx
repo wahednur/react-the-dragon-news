@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const BreakingNews = () => {
   return (
     <div className="my-8 latest-scroll flex">
-      <button className="btn btn-news p-5">Latest</button>
+      <button className="cbtn cbtn-news p-5">Latest</button>
       <Marquee className="latest-mark" pauseOnHover speed={100}>
         <Link>
           Match Highlights: Germany vs Spain — as it happened ! Match
