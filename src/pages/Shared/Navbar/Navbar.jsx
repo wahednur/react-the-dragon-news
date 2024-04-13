@@ -1,7 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import userDefaultPic from "../../../assets/user.png";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
   const navLink = (
     <>
       <li className="sm:w-full">
@@ -25,6 +28,11 @@ const Navbar = () => {
     const selectMenu = document.getElementById("toogleBtn");
     selectMenu.classList.toggle("active");
   };
+  const handleLogOut = () => {
+    logOut()
+      .then(console.log(user.email, "Log out successfully"))
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="py-5">
       <nav className="flex lg:flex-row justify-between items-center relative">
@@ -44,7 +52,15 @@ const Navbar = () => {
           <div className="user-icon">
             <img src={userDefaultPic} alt="" />
           </div>
-          <button className="btn login-btn">Login</button>
+          {user ? (
+            <button onClick={handleLogOut} className="btn login-btn">
+              Log Out
+            </button>
+          ) : (
+            <Link to="/login" className="btn login-btn">
+              Login
+            </Link>
+          )}
         </div>
       </nav>
     </div>
